@@ -10,8 +10,8 @@ function PlantCard({plant}) {
                 <Card.Title> {plant.name}</Card.Title>
                 <Card.Subtitle>{plant.plant_type}</Card.Subtitle>
                 <Card.Text>{plant.notes}</Card.Text>
-                <button class ="crud">Edit</button>
-                <button class ="crud">Delete</button>
+                <button class ="redirect_btn">Edit</button>
+                <button class ="redirect_btn">Delete</button>
             </Card.Body>
         {console.log(plant)}
         </Card>
