@@ -17,19 +17,17 @@ function Plants () {
 
 
     return ( 
-        <>
+        <div id="plantCardsDiv">
         <h1>your plants</h1>
         {plantList.map((plant) => {
             return (
-                <div 
-                
-                id="plantCardsDiv">
+                <div    >
                     <PlantCard plant={plant}/>
                 </div>
             )})
             }
         
-        </>
+        </div>
     )
 }
 

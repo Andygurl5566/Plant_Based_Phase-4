@@ -16,7 +16,7 @@ function Gardens () {
 
 
     return ( 
-        <>
+        <div id="gardenCardsDiv">
         <h1>your gardens</h1>
         {GardenList.map((garden) => {
             return (
@@ -28,7 +28,7 @@ function Gardens () {
             )})
             }
         
-        </>
+        </div>
     )
 }
 

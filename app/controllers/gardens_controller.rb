@@ -1,19 +1,41 @@
 class GardensController < ApplicationController
-    def show
+
+    def index
         garden = Garden.all 
         render json: garden
 
     end
 
-    def index
-        plant = Garden.create(garden_params)
-        render json: plant 
+    def show
+        garden = Garden.find_by(id: params[:id])
+        if garden 
+            render json: garden
+        else 
+            render json: {error: "Garden not found"}, status: :not_found
+        end
+    end
 
+    def create
+        garden = Garden.create(garden_params)
+        if garden.valid? 
+            render json: garden, status: :created
+        else 
+            render json: { error: garden.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
+
+    def destroy
+        garden = Garden.find_by(id: params[:id])
+        if garden 
+            garden.destroy
+        else  
+            render json: { error: "Garden not found"}, status: :not_found
+        end
     end
 
     private
 
     def garden_params
-    params.permit(:name, :location )
+        params.permit(:name, :location, :user_id)
     end
 end

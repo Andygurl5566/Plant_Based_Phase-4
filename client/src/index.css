@@ -1,3 +1,18 @@
 body {
    /* background-image: url('./images/teemu-paananen-OOE4xAnBhKo-unsplash.jpg') */
 }
+
+#plantCardsDiv { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(3rem, auto);
+}
+
+#gardenCardsDiv { 
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 0.25rem;
+   grid-auto-rows: minmax(3rem, auto);
+
+ }
