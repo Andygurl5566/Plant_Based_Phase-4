@@ -17,4 +17,7 @@ class GardensController < ApplicationController
     params.permit(:name, :location )
     end
 end
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
