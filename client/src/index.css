@@ -19,6 +19,7 @@ body {
 
  .btn btn-primary{
    text-decoration: none;
+  
  }
  
  .redirect{
@@ -27,6 +28,6 @@ body {
  }
 
  .redirect_btn{
-
     margin: 10px;
+    
  }
