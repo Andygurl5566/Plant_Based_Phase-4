@@ -28,6 +28,7 @@ class GardensController < ApplicationController
         garden = Garden.find_by(id: params[:id])
         if garden 
             garden.destroy
+            head :no_content
         else  
             render json: { error: "Garden not found"}, status: :not_found
         end

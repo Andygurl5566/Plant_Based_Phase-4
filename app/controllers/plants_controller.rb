@@ -15,11 +15,30 @@ class PlantsController < ApplicationController
         end
     end
 
+    def create
+        plant = Plant.create(plant_params)
+        if plant.valid? 
+            render json: plant, status: :created
+        else 
+            render json: { error: plant.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
+
     def update
         plant = Plant.find_by(id: params[:id])
         if plant
             plant.update(plant_params)
             render json: plant, status:200
+        else 
+            render json: { error: "Plant not found"}, status: :not_found
+        end
+    end
+
+    def destroy
+        plant = Plant.find_by(id: params[:id])
+        if plant 
+            plant.destroy
+            head :no_content
         else 
             render json: { error: "Plant not found"}, status: :not_found
         end
