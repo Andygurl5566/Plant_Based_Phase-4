@@ -21,7 +21,9 @@ function Plants () {
         <h1>your plants</h1>
         {plantList.map((plant) => {
             return (
-                <div id="plantCardsDiv">
+                <div 
+                
+                id="plantCardsDiv">
                     <PlantCard plant={plant}/>
                 </div>
             )})

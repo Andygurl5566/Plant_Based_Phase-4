@@ -1,7 +1,18 @@
+import { Card } from "react-bootstrap"
 
-function PlantCard() {
+function PlantCard({plant}) {
     return (
-        <p>this is a Plant card</p>
+        <>
+        
+        <Card style={{ width: '18rem' }}>
+            <Card.Body>
+                <Card.Title> {plant.name}</Card.Title>
+                <Card.Subtitle>{plant.plant_type}</Card.Subtitle>
+                <Card.Text>{plant.notes}</Card.Text>
+            </Card.Body>
+        {console.log(plant)}
+        </Card>
+        </>
     )
 }
 
