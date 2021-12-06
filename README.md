@@ -1,3 +1,4 @@
+Hi this is james and im making sure git works
 # Project Template: React/Rails API
 
 ## Description
