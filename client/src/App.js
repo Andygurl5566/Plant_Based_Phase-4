@@ -7,6 +7,7 @@ import Home from './Components/Home.js';
 import Gardens from './Components/Gardens.js';
 import Plants from './Components/Plants.js';
 import Users from './Components/Users';
+import Login from './Components/Login';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/users" element={<Users/>}/>
           <Route path="/gardens" element={<Gardens/>}/>
           <Route path="/plants" element={<Plants/>}/>
+          <Route path="/login" element={<Login/>}/>
 
         </Routes>
       </Container>
