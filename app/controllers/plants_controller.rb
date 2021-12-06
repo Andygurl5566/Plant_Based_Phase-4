@@ -15,9 +15,26 @@ class PlantsController < ApplicationController
         end
     end
 
+    def update
+        plant = Plant.find_by(id: params[:id])
+        if plant
+            plant.update(plant_update_params)
+         if plant.valid?
+            render json: plant, status:200
+         else
+            render json: {error:plant.errors.full_messages}
+         end
+         render json:{error: "Plant not found"}, status:404
+        end
+    end
+
     private
 
     def plant_params
     params.permit(:name, :plant_type, :plant_species, :image, :care_instructions, :notes, :garden_id)
     end
+
+    def plant_update_params
+        params.permit(:name, :plant_type, :plant_species, :image, :care_instructions, :notes)
+        end
 end

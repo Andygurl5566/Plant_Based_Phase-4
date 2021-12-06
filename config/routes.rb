@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :plants, only: [:index, :show]
+  resources :plants, only: [:index, :show, :update]
   resources :gardens, only: [:index, :show]
   
   # Routing logic: fallback requests for React Router.
