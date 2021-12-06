@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react"
 import PlantCard from "./PlantCard" 
+import {Link} from 'react-router-dom'
 
 function Plants () {
 
@@ -17,8 +18,12 @@ function Plants () {
 
 
     return ( 
-        <div id="plantCardsDiv">
+
+        <> 
         <h1>your plants</h1>
+        <button class= "redirect"> <Link to="/plant_form"> Add Plant </Link></button>
+        <div id="plantCardsDiv">
+       
         {plantList.map((plant) => {
             return (
                 <div    >
@@ -28,6 +33,7 @@ function Plants () {
             }
         
         </div>
+        </>
     )
 }
 

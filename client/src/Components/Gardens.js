@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react"
+import {Link} from "react-router-dom"
 import GardenCard from "./GardenCard" 
 function Gardens () {
 
@@ -16,8 +17,11 @@ function Gardens () {
 
 
     return ( 
-        <div id="gardenCardsDiv">
+        <>
+
         <h1>your gardens</h1>
+        <button class= "redirect"> <Link to="/garden_form"> Create Garden </Link></button>
+        <div id="gardenCardsDiv">
         {GardenList.map((garden) => {
             return (
                 <div id="GardenCardsDiv">
@@ -29,6 +33,7 @@ function Gardens () {
             }
         
         </div>
+        </>
     )
 }
 

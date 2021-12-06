@@ -2,9 +2,9 @@
 
 
 function Login(){
+
     return ( 
 <>
-
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -20,10 +20,8 @@ function Login(){
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 </>
-      
-    )
+)
 
 }
 
