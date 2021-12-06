@@ -17,4 +17,4 @@ class GardensController < ApplicationController
     params.permit(:name, :location )
     end
 end
-end
+
