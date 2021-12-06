@@ -52,10 +52,10 @@ function PlantForm(){
     <div class="form-check">
     
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
 
-    <button class="btn btn-primary"> <Link to="/plants"> Back</Link></button> 
-    {/* #Button is working, I just need to take the decoration off so you can see it  */}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <Link class="btn btn-primary" to="/plants"> Back</Link> 
+    
  </form>   
         
 </>

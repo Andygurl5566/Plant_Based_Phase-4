@@ -21,9 +21,9 @@ function GardenForm(){
     
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+   <Link class="btn btn-primary" to="/gardens"> Back</Link>
+   
 
-    <button class="btn btn-primary"> <Link to="/gardens"> Back</Link></button> 
-    {/* #Button is working, I just need to take the decoration off so you can see it  */}
  </form>   
         
         </>

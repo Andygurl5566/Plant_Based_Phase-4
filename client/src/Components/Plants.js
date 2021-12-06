@@ -21,7 +21,8 @@ function Plants () {
 
         <> 
         <h1>your plants</h1>
-        <button class= "redirect"> <Link to="/plant_form"> Add Plant </Link></button>
+
+        <button class= "redirect_btn"> <Link class="redirect" to="/plant_form"> Add Plant </Link></button>
         <div id="plantCardsDiv">
        
         {plantList.map((plant) => {

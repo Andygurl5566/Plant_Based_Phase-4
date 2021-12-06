@@ -17,4 +17,16 @@ body {
 
  }
 
+ .btn btn-primary{
+   text-decoration: none;
+ }
  
+ .redirect{
+  text-decoration: none;
+  color: black;
+ }
+
+ .redirect_btn{
+
+    margin: 10px;
+ }

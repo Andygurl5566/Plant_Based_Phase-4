@@ -20,7 +20,7 @@ function Gardens () {
         <>
 
         <h1>your gardens</h1>
-        <button class= "redirect"> <Link to="/garden_form"> Create Garden </Link></button>
+        <button class= "redirect_btn"> <Link class="redirect" to="/garden_form"> Create Garden </Link></button>
         <div id="gardenCardsDiv">
         {GardenList.map((garden) => {
             return (
