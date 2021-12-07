@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'sessions/create'
   get 'sessions/destroy'
-  resources :plants, only: [:index, :show, :update, :destroy]
+  resources :plants, only: [:index, :show, :update, :destroy, :create]
   resources :gardens, only: [:index, :show, :create]
   resources :users, only: [:create, :index, :show, :update, :delete]
   
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
-  
+
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 end

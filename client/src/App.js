@@ -1,5 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { Outlet, Link, Route, Routes } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap';
@@ -11,7 +13,25 @@ import Login from './Components/Login';
 import GardenForm from './Components/GardenForm';
 import PlantForm from './Components/PlantForm';
 
-function App() {
+
+const App = () => {
+  
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const [currentUser, setCurrentUser] = useState(null);
+  // useEffect(() => {
+  //   fetch("/me").then((res) => {
+  //     if (res.ok) {
+  //       res.json().then((user) => {
+  //         setCurrentUser(user);
+  //         setIsAuthenticated(true);
+  //       });
+  //     }
+  //   });
+  // }, []);
+  // if (!isAuthenticated) {
+  //   return <div></div>;
+  // }
+ 
   return (
     <>
       <Navbar>

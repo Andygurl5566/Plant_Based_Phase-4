@@ -1,46 +1,81 @@
 import { Form } from "react-bootstrap"
 import {Link} from 'react-router-dom'
+import React, { useState } from "react";
 
 
-function PlantForm(){
+const PlantForm=()=> {
+    const [currentPlant, setCurrentPlant] = useState({});
+    const [formData, setFormData] = useState({
+        name: "",
+        plant_type: "",
+        plant_species: "",
+        image: "",
+        care_instructions: "",
+        notes: "",
+
+    });
+    const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value,
+        });
+      };
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        fetch("http://localhost:3000/plants", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }).then((res) => {
+            if (res.ok) {
+              res.json().then((plant) => {
+                setCurrentPlant(plant);
+              });
+            } else {
+              res.json().then((errors) => {
+                console.error(errors);
+              });
+            }
+          });
+        
+        }
+
+    
     return(
 <>
 
- <form>
+ <form onSubmit={handleSubmit}>
     <div class="form-group">
         <label for="name">Plant Name</label>
-        <input type="text" class="form-control" id="name" />
+        <input type="text" class="form-control" name="name" value={formData.name} onChange={handleChange} />
     </div>
 
     <div class="form-group">
         <label for="plant_type">Plant Type</label>
-        <input type="text" class="form-control" id="type" />
+        <input type="text" name="plant_type" value={formData.plant_type} onChange={handleChange} class="form-control" id="type" />
     </div>
 
     <div class="form-group">
         <label for="species">Species</label>
-        <input type="text" class="form-control" id="species" />
-    </div>
-
-    <div class="form-group">
-        <label for="name">Description</label>
-        <input type="text" class="form-control" id="description" />
+        <input type="text" name="plant_species" value={formData.plant_species} onChange={handleChange} class="form-control" id="species" />
     </div>
 
     <div class="form-group">
         <label for="name">Care Instructions </label>
-        <input type="text" class="form-control" id="instructions" />
+        <input type="text" name="care_instructions" value={formData.care_instructions} onChange={handleChange} class="form-control" id="instructions" />
     </div>
 
     <div class="form-group">
         <label for="name">Notes </label>
-        <input type="text" class="form-control" id="notes" placeholder="Notes"/>
+        <input type="text" name = "notes" class="form-control" value={formData.notes} onChange={handleChange} id="notes" placeholder="Notes"/>
     </div>
 
     <Form.Group controlId="formFile" className="mb-3">     
     <div class="form-group">
         <label for="name">Image </label>
-        <input type="file" class="form-control" id="image" />
+        <input type="file" name="image" value={formData.image} onChange={handleChange} class="form-control" id="image" />
     </div>
     </Form.Group>
     

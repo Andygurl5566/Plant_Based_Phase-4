@@ -6,7 +6,8 @@ import React, { useState } from "react";
 //LOGIN FUNCTIONALITY
 
 const Login= () => {
-  const [currentUser, setCurrentUser] = useState(null);
+  
+  const [currentUser, setCurrentUser] = useState({});
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -20,7 +21,8 @@ const Login= () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("/login", {
+    //not sure if we need full web address?
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +54,7 @@ const Login= () => {
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+        <input type="text" name="password" value={formData.password} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
       </div>
       <div class="form-check">
       
