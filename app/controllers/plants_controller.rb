@@ -17,7 +17,7 @@ class PlantsController < ApplicationController
     end
 
     def create
-        plant = Plant.create(plant_params)
+        plant = @current_user.plants.create(plant_params)
         if plant.valid? 
             render json: plant, status: :created
         else 
@@ -26,7 +26,7 @@ class PlantsController < ApplicationController
     end
 
     def update
-        plant = Plant.find_by(id: params[:id])
+        plant = @current_user.plants.find_by(id: params[:id])
         if plant
             plant.update(plant_params)
             render json: plant, status:200
@@ -36,7 +36,7 @@ class PlantsController < ApplicationController
     end
 
     def destroy
-        plant = Plant.find_by(id: params[:id])
+        plant = @current_user.plants.find_by(id: params[:id])
         if plant 
             plant.destroy
             head :no_content

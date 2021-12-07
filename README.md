@@ -1,5 +1,5 @@
 Hi this is james and im making sure git works
-Testing -Andrea
+Testing -Andrea test
 # Project Template: React/Rails API
 
 ## Description

@@ -18,7 +18,7 @@ class GardensController < ApplicationController
     end
 
     def create
-        garden = Garden.create(garden_params)
+        garden = @current_user.gardens.create(garden_params)
         if garden.valid? 
             render json: garden, status: :created
         else 
@@ -27,7 +27,7 @@ class GardensController < ApplicationController
     end
 
     def destroy
-        garden = Garden.find_by(id: params[:id])
+        garden = @current_user.gardens.find_by(id: params[:id])
         if garden 
             garden.destroy
             head :no_content
