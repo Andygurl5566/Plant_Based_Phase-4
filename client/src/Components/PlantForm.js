@@ -12,6 +12,7 @@ const PlantForm=()=> {
         image: "",
         care_instructions: "",
         notes: "",
+      
 
     });
     const handleChange = (e) => {
