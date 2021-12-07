@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id #, :username, :email
+  attributes :id, :name, :bio, :garden_level
 
   has_many :gardens
 

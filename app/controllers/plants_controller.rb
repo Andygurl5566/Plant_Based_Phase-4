@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+    before_action :is_authorized, only: [:update, :destroy]
 
     def index
         plant = Plant.all 
@@ -52,5 +53,15 @@ class PlantsController < ApplicationController
 
     def plant_update_params
         params.permit(:name, :plant_type, :plant_species, :image, :care_instructions, :notes)
-        end
+    end
+
+    def set_plant
+        @plant = Plant.find_by(id: params[:id])
+    end
+
+    def is_authorized
+        permitted = @plant.user_id == current_user.user_id
+        render json: "You don't own this plant, sorry!", status: :forbidden unless permitted
+    end
+
 end

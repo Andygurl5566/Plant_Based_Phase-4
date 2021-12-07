@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # skip_before_action :authenticate_user, only: [:create, :show]
+    skip_before_action :authenticate_user, only: [:create, :show]
 
     def index
         render json: User.all, each_serializer: UserSerializer
@@ -8,11 +8,10 @@ class UsersController < ApplicationController
 
 
     def show
-        user = User.find_by(id: params[:id])
-        if user
-            render json: user, status: :ok
+        if current_user
+            render json: current_user, status: :ok
         else 
-            render json: {error: "User not found"}, status: :not_found
+            render json: {error: "No current session stored"}, status: :unauthorized
         end
     end
 

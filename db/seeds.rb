@@ -8,8 +8,8 @@
 
 
 
-user1 = User.create(name: "James", bio:"Plant Papa", garden_level: 1000000)
-user2 = User.create(name: "Andrea", bio:"plant destroyer", garden_level: 1)
+user1 = User.create(name: "James", bio:"Plant Papa", garden_level: 1000000, password: "12345ABC!", username: "jamesb")
+user2 = User.create(name: "Andrea", bio:"plant destroyer", garden_level: 1, password: "54321ABC!", username: "andreaf" )
 
 
 
