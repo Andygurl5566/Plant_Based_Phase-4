@@ -1,28 +1,69 @@
+import React, { useState } from "react";
 
 
 
-function Login(){
+
+//LOGIN FUNCTIONALITY
+
+const Login= () => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          setCurrentUser(user);
+        });
+      } else {
+        res.json().then((errors) => {
+          console.error(errors);
+        });
+      }
+    });
+  
+  }
+
+//JSX BEGINGS HERE
 
     return ( 
 <>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-   
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-  </div>
-  <div class="form-check">
-  
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <form onSubmit={handleSubmit}>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="text" name="username" value={formData.username} onChange={handleChange} class="form-control"  placeholder="Enter Email"/>
+      
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+      </div>
+      <div class="form-check">
+      
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </>
 )
 
+
 }
+
 
 export default Login

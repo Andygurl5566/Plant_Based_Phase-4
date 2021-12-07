@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_user
+  # before_action :authenticate_user <---Commented this out because it was affecting garden get requests
   include ActionController::Cookies
 
   def current_user
