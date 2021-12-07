@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -60,6 +61,7 @@ const Login= () => {
       
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
+      <Link class="btn btn-primary" to="/"> Back</Link> 
     </form>
 </>
 )
