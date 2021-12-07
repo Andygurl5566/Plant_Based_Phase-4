@@ -8,6 +8,8 @@ import Gardens from './Components/Gardens.js';
 import Plants from './Components/Plants.js';
 import Users from './Components/Users';
 import Login from './Components/Login';
+import GardenForm from './Components/GardenForm';
+import PlantForm from './Components/PlantForm';
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
           <Route path="/gardens" element={<Gardens/>}/>
           <Route path="/plants" element={<Plants/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path = "/garden_form" element={<GardenForm/>}/>
+          <Route path = "/plant_form" element={<PlantForm/>}/>
+
 
         </Routes>
       </Container>
