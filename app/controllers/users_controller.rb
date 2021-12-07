@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     
-    skip_before_action :authenticate_user, only: [:create, :show]
+    # skip_before_action :authenticate_user, only: [:create, :show]
 
     def index
         render json: User.all, each_serializer: UserSerializer
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :created
         else 
-            render json: user.errors.full_messages, 
+            render json: {user.errors.full_messages}, 
             status: :unprocessable_entity
         end
     end

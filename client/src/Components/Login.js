@@ -22,8 +22,8 @@ const Login= () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    //not sure if we need full web address?
     fetch("/login", {
+      //fix above
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +36,7 @@ const Login= () => {
         });
       } else {
         res.json().then((errors) => {
+          //fix above
           console.error(errors);
         });
       }

@@ -49,17 +49,17 @@ const Signup= () => {
 <>
     <form onSubmit={handleSubmit}>
       <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
+        <label HTMLfor="exampleInputEmail1">Username</label>
         <input type="text" name="username" value={formData.username} onChange={handleChange} class="form-control"  placeholder="Enter Email"/>
       
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
+        <label HTMLfor="exampleInputPassword1">Password</label>
         <input type="text" name="password" value={formData.password} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
       </div>
 
       <div class="form-group">
-        <label for="exampleInputPassword1">Email</label>
+        <label HTMLfor="exampleInputPassword1">Email</label>
         <input type="text" name="email" value={formData.email} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
       </div>
       <div class="form-check">

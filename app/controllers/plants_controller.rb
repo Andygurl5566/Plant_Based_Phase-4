@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-    before_action :is_authorized, only: [:update, :destroy]
+    # before_action :is_authorized, only: [:update, :destroy]
 
     def index
         plant = Plant.all 

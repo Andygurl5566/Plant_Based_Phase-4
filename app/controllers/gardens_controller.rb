@@ -1,6 +1,6 @@
 class GardensController < ApplicationController
-    before_action :authorize
-    skip_before_action :authorize, only: [:index, :show, :create, :destroy]
+    # before_action :authorize
+    # skip_before_action :authorize, only: [:index, :show, :create, :destroy]
 
     def index
         garden = Garden.all 
