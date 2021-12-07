@@ -12,10 +12,11 @@ import Users from './Components/Users';
 import Login from './Components/Login';
 import GardenForm from './Components/GardenForm';
 import PlantForm from './Components/PlantForm';
+import Signup from './Components/Signup';
 
 
 const App = () => {
-  
+
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   // const [currentUser, setCurrentUser] = useState(null);
   // useEffect(() => {
@@ -55,6 +56,8 @@ const App = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path = "/garden_form" element={<GardenForm/>}/>
           <Route path = "/plant_form" element={<PlantForm/>}/>
+          <Route path = "/signup" element={<Signup/>}/>
+
 
 
         </Routes>

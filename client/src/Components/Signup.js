@@ -1,0 +1,76 @@
+// import React, { useState } from "react";
+
+
+
+
+//LOGIN FUNCTIONALITY
+
+const Signup= () => {
+  
+  // const [currentUser, setCurrentUser] = useState({});
+  // const [formData, setFormData] = useState({
+  //   username: "",
+  //   password: "",
+  // });
+
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   //not sure if we need full web address?
+  //   fetch("/login", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(formData),
+  //   }).then((res) => {
+  //     if (res.ok) {
+  //       res.json().then((user) => {
+  //         setCurrentUser(user);
+  //       });
+  //     } else {
+  //       res.json().then((errors) => {
+  //         console.error(errors);
+  //       });
+  //     }
+  //   });
+  
+  // }
+
+//JSX BEGINGS HERE
+
+    return ( 
+<>
+    <form >
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input type="text" name="username"  class="form-control"  placeholder="Enter Email"/>
+      
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="text" name="password"class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Confirm Password</label>
+        <input type="text" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+      </div>
+      <div class="form-check">
+      
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</>
+)
+
+
+}
+
+
+export default Signup

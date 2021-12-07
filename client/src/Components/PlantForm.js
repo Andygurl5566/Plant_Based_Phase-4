@@ -12,6 +12,7 @@ const PlantForm=()=> {
         image: "",
         care_instructions: "",
         notes: "",
+        garden_id:""
       
 
     });
@@ -71,6 +72,11 @@ const PlantForm=()=> {
     <div class="form-group">
         <label for="name">Notes </label>
         <input type="text" name = "notes" class="form-control" value={formData.notes} onChange={handleChange} id="notes" placeholder="Notes"/>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Garden ID</label>
+        <input type="text" name = "garden_id" class="form-control" value={formData.garden_id} onChange={handleChange} id="notes" placeholder="Enter an Integer"/>
     </div>
 
     <Form.Group controlId="formFile" className="mb-3">     
